@@ -4,6 +4,9 @@ All notable changes to PgVouch. The format follows [Keep a Changelog](https://ke
 
 ## [Unreleased]
 
+### Changed
+- **Releases are listed in the official MCP Registry automatically.** After a version is approved on npm, the release workflow publishes `server.json` to the registry, logged in with the workflow's GitHub identity (no stored token), using a pinned and checksum-verified `mcp-publisher`. A unit test keeps `server.json` in step with `package.json`.
+
 ## [0.4.4] - 2026-10-04
 
 ### Added

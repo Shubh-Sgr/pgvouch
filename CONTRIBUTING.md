@@ -46,9 +46,10 @@ Small commits with [Conventional Commit](https://www.conventionalcommits.org/) m
 
 ## Releasing (maintainers)
 
-1. On a branch: bump `version` in `package.json`, `package-lock.json` and `src/version.ts`, and move the "Unreleased" changelog entries under the new version. Merge it through a pull request.
+1. On a branch: bump `version` in `package.json`, `package-lock.json`, `src/version.ts` and both places in `server.json` (a unit test checks they match), and move the "Unreleased" changelog entries under the new version. Merge it through a pull request.
 2. Create a GitHub release on `main` with the tag `vX.Y.Z` (the same version). Mark it as a pre-release to publish under the npm `next` tag.
 3. The [Release workflow](.github/workflows/release.yml) checks that the tag matches `package.json`, runs the typecheck, unit tests and build, and **stages** the version on npm with provenance. No npm token is involved: npm trusts this repository's `release.yml` (set once under the package's settings on npmjs.com → Trusted publishing, stage-only).
 4. Approve it with 2FA: npmjs.com → pgvouch → Staged Packages, or `npm stage list pgvouch` then `npm stage approve <id>`. Only then is the version public.
+5. The same workflow then lists the version in the [official MCP Registry](https://registry.modelcontextprotocol.io) as `io.github.Shubh-Sgr/pgvouch`: it waits up to 2 hours for the approval, then publishes `server.json`, logged in with the workflow's GitHub identity (no token). Approved later than that? Re-run the failed job. Pre-releases are not listed.
 
 By contributing, you agree that your contributions are licensed under the [Apache License 2.0](LICENSE) (see section 5 of the license), including its patent grant.

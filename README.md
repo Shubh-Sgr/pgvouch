@@ -314,6 +314,8 @@ npm run db:down && npm run db:up   # fresh, identical databases again (~3 min)
 
 [MCP](https://modelcontextprotocol.io) (Model Context Protocol) is the standard way AI assistants call external tools. PgVouch runs as a local MCP server: the assistant (Claude Code, Cursor, …) starts it as a child process and talks to it over stdin/stdout. You then ask questions in plain English, and the assistant decides which PgVouch tools to call.
 
+PgVouch is listed in the [official MCP Registry](https://registry.modelcontextprotocol.io/v0.1/servers?search=io.github.Shubh-Sgr/pgvouch) as `io.github.Shubh-Sgr/pgvouch`, so clients and directories that read the registry can find it. Either way it runs on your machine: the registry only describes how to start it.
+
 ### Step 1: make sure the databases are up
 
 ```bash
