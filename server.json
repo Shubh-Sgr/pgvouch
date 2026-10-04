@@ -1,0 +1,48 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.Shubh-Sgr/pgvouch",
+  "title": "PgVouch",
+  "description": "Safe PostgreSQL migrations: schema drift, lock analysis, safe rewrites, data checksums. Read-only.",
+  "repository": {
+    "url": "https://github.com/Shubh-Sgr/pgvouch",
+    "source": "github"
+  },
+  "version": "0.4.4",
+  "packages": [
+    {
+      "registryType": "npm",
+      "registryBaseUrl": "https://registry.npmjs.org",
+      "identifier": "pgvouch",
+      "version": "0.4.4",
+      "transport": {
+        "type": "stdio"
+      },
+      "packageArguments": [
+        {
+          "type": "positional",
+          "value": "mcp"
+        }
+      ],
+      "environmentVariables": [
+        {
+          "name": "SOURCE_DATABASE_URL",
+          "description": "Read-only postgres:// URL of the reference database",
+          "isRequired": true,
+          "isSecret": true
+        },
+        {
+          "name": "TARGET_DATABASE_URL",
+          "description": "Read-only postgres:// URL of the database to check",
+          "isRequired": true,
+          "isSecret": true
+        },
+        {
+          "name": "PGVOUCH_LLM",
+          "description": "Optional planner LLM: none (default), ollama or gemini",
+          "isRequired": false,
+          "default": "none"
+        }
+      ]
+    }
+  ]
+}
