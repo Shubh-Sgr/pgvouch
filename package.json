@@ -1,6 +1,7 @@
 {
   "name": "pgvouch",
-  "version": "0.4.3",
+  "version": "0.4.4",
+  "mcpName": "io.github.Shubh-Sgr/pgvouch",
   "description": "MCP server + CLI for safe PostgreSQL migrations: drift detection, lock analysis, safe rewrites, checksum verification.",
   "license": "Apache-2.0",
   "type": "module",

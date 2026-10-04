@@ -4,6 +4,14 @@ All notable changes to PgVouch. The format follows [Keep a Changelog](https://ke
 
 ## [Unreleased]
 
+## [0.4.4] - 2026-10-04
+
+### Added
+- **Listed in the official MCP Registry** as `io.github.Shubh-Sgr/pgvouch`: `server.json` describes how MCP clients start PgVouch (`npx pgvouch mcp` over stdio) and its settings (`SOURCE_DATABASE_URL` and `TARGET_DATABASE_URL` required, `PGVOUCH_LLM` optional), and `package.json` names that entry (`mcpName`), which the registry checks.
+
+### Changed
+- README: npm provenance has been on since 0.4.1 (the security section still said "from the next release on").
+
 ## [0.4.3] - 2026-10-02
 
 ### Fixed
@@ -100,7 +108,8 @@ All notable changes to PgVouch. The format follows [Keep a Changelog](https://ke
 
 First public release: schema introspection and drift detection, chunked checksum verification with bisection to the exact differing rows, lock-impact analysis, safe rewrites, a guarded LLM planner with a rules-only fallback, shadow runs, reversibility tags, hashed receipts, an MCP server with 6 read-only tools, and an eval suite.
 
-[Unreleased]: https://github.com/Shubh-Sgr/pgvouch/compare/v0.4.3...HEAD
+[Unreleased]: https://github.com/Shubh-Sgr/pgvouch/compare/v0.4.4...HEAD
+[0.4.4]: https://github.com/Shubh-Sgr/pgvouch/compare/v0.4.3...v0.4.4
 [0.4.3]: https://github.com/Shubh-Sgr/pgvouch/compare/v0.4.2...v0.4.3
 [0.4.2]: https://github.com/Shubh-Sgr/pgvouch/compare/v0.4.1...v0.4.2
 [0.4.1]: https://github.com/Shubh-Sgr/pgvouch/compare/v0.4.0...v0.4.1
